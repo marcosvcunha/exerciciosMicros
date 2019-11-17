@@ -1,0 +1,29 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\Debug\Prova Q7.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Prova Q7.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Prova Q7.map</FILE>
+  <FILE>Prova Q7.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\main.asm</FILE><LINE>18</LINE></start>
+  <irq0><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\main.asm</FILE><LINE>45</LINE></irq0>
+  <loop><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\Prova Q7\Prova Q7\main.asm</FILE><LINE>28</LINE></loop>
+ </LABELS>
+</ASSEMBLER_INFO>

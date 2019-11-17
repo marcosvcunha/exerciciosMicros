@@ -1,0 +1,48 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\Debug\LCD Teste.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>LCD Teste.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>LCD Teste.map</FILE>
+  <FILE>LCD Teste.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>94</LINE></start>
+  <ADC_COMP><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>240</LINE></ADC_COMP>
+  <init_lcd><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>179</LINE></init_lcd>
+  <_write_lcd_data><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>201</LINE></_write_lcd_data>
+  <_delay_us><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>217</LINE></_delay_us>
+  <conf_conv><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>107</LINE></conf_conv>
+  <start_conv><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>117</LINE></start_conv>
+  <loop><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>121</LINE></loop>
+  <_write_lcd_cmd><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>193</LINE></_write_lcd_cmd>
+  <show_h><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>138</LINE></show_h>
+  <show_l><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>151</LINE></show_l>
+  <show_pot><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>160</LINE></show_pot>
+  <end_conv><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>166</LINE></end_conv>
+  <clean><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>168</LINE></clean>
+  <fim><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>174</LINE></fim>
+  <delay_2ms><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>227</LINE></delay_2ms>
+  <delay_1us><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>209</LINE></delay_1us>
+  <loop1_d1><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>212</LINE></loop1_d1>
+  <loop1_d45><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>219</LINE></loop1_d45>
+  <loop1_d2><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>230</LINE></loop1_d2>
+  <mess1><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>235</LINE></mess1>
+  <mess2><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\LCD Teste\LCD Teste\main.asm</FILE><LINE>237</LINE></mess2>
+ </LABELS>
+</ASSEMBLER_INFO>
