@@ -1,0 +1,39 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\Debug\analog.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>analog.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>analog.map</FILE>
+  <FILE>analog.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>49</LINE></start>
+  <ADC_COMP><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>92</LINE></ADC_COMP>
+  <conf_conv><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>51</LINE></conf_conv>
+  <start_conv><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>59</LINE></start_conv>
+  <loop><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>63</LINE></loop>
+  <delay_1us><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>66</LINE></delay_1us>
+  <loop1_d1><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>69</LINE></loop1_d1>
+  <_delay_us><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>74</LINE></_delay_us>
+  <loop1_d45><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>76</LINE></loop1_d45>
+  <delay_2ms><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>84</LINE></delay_2ms>
+  <loop1_d2><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>87</LINE></loop1_d2>
+  <end><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>98</LINE></end>
+  <less><FILE>c:\users\marcos cunha\Documents\Atmel Studio\7.0\analog\analog\main.asm</FILE><LINE>102</LINE></less>
+ </LABELS>
+</ASSEMBLER_INFO>
