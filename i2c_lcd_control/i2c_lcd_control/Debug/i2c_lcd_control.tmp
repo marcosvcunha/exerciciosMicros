@@ -1,0 +1,93 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\Debug\i2c_lcd_control.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>i2c_lcd_control.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>i2c_lcd_control.map</FILE>
+  <FILE>i2c_lcd_control.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <adc_data><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>9</LINE></adc_data>
+  <adc_asc><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>10</LINE></adc_asc>
+  <start><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>25</LINE></start>
+  <usart_receiver_isr><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc</FILE><LINE>25</LINE></usart_receiver_isr>
+  <adc_complete><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>126</LINE></adc_complete>
+  <TWI_ISR><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>19</LINE></TWI_ISR>
+  <twi_init><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>22</LINE></twi_init>
+  <twi_start><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>33</LINE></twi_start>
+  <twi_stop><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>41</LINE></twi_stop>
+  <twi_write_byte><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>46</LINE></twi_write_byte>
+  <twi_read_nack><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>53</LINE></twi_read_nack>
+  <twi_read_ack><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>60</LINE></twi_read_ack>
+  <twi_write_slave_reg><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>67</LINE></twi_write_slave_reg>
+  <twi_read_slave_reg><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc</FILE><LINE>83</LINE></twi_read_slave_reg>
+  <delay_1us><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>49</LINE></delay_1us>
+  <loop1_d1><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>52</LINE></loop1_d1>
+  <_delay_us><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>57</LINE></_delay_us>
+  <loop1_d45><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>59</LINE></loop1_d45>
+  <delay_2ms><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>67</LINE></delay_2ms>
+  <loop1_d2><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>70</LINE></loop1_d2>
+  <buffer_flush><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>75</LINE></buffer_flush>
+  <_START_BUFFER_ADDR><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>184</LINE></_START_BUFFER_ADDR>
+  <_buffer_head><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>187</LINE></_buffer_head>
+  <_buffer_tail><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>188</LINE></_buffer_tail>
+  <_buffer_flag><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>189</LINE></_buffer_flag>
+  <buffer_write><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>86</LINE></buffer_write>
+  <_buffer_write_ret><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>107</LINE></_buffer_write_ret>
+  <_END_BUFFER_ADDR><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>186</LINE></_END_BUFFER_ADDR>
+  <_buffer_write_end><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>104</LINE></_buffer_write_end>
+  <buffer_read><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>110</LINE></buffer_read>
+  <_buffer_read_ret><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>130</LINE></_buffer_read_ret>
+  <_buffer_read_end><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>127</LINE></_buffer_read_end>
+  <int16_to_asc><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>134</LINE></int16_to_asc>
+  <_start_conv><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>136</LINE></_start_conv>
+  <_div10><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>142</LINE></_div10>
+  <_next_step><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>150</LINE></_next_step>
+  <_rbuffer><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>185</LINE></_rbuffer>
+  <_asc_buffer><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc</FILE><LINE>190</LINE></_asc_buffer>
+  <lcd_init><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>95</LINE></lcd_init>
+  <rgb_init><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>111</LINE></rgb_init>
+  <lcd_clear><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>118</LINE></lcd_clear>
+  <_lcd_set_cursor><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>123</LINE></_lcd_set_cursor>
+  <_continue><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>129</LINE></_continue>
+  <lcd_write_str_flash><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>134</LINE></lcd_write_str_flash>
+  <_l1_str_from_flash><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>139</LINE></_l1_str_from_flash>
+  <_p1_str><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>144</LINE></_p1_str>
+  <lcd_write_str_sram><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>148</LINE></lcd_write_str_sram>
+  <_l1_str_from_sram><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>149</LINE></_l1_str_from_sram>
+  <_p2_str><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>154</LINE></_p2_str>
+  <lcd_write_reg_hex><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>158</LINE></lcd_write_reg_hex>
+  <_c1><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>167</LINE></_c1>
+  <_c2><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc</FILE><LINE>176</LINE></_c2>
+  <usart_init><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc</FILE><LINE>12</LINE></usart_init>
+  <usart_transmit><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc</FILE><LINE>31</LINE></usart_transmit>
+  <_msg1><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>137</LINE></_msg1>
+  <_go_again><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>46</LINE></_go_again>
+  <_msg2><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>138</LINE></_msg2>
+  <_msg3><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>139</LINE></_msg3>
+  <_loop_update><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>90</LINE></_loop_update>
+  <_print_buffer><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>108</LINE></_print_buffer>
+  <_loop_continue><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>120</LINE></_loop_continue>
+  <fim><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>123</LINE></fim>
+  <_constants><FILE>C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm</FILE><LINE>136</LINE></_constants>
+ </LABELS>
+</ASSEMBLER_INFO>

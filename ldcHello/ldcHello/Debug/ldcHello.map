@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\LCD Teste\LCD Teste\main.asm Mon Nov 18 11:52:00 2019
+AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\ldcHello\ldcHello\main.asm Mon Nov 18 12:56:11 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -695,8 +695,8 @@ EQU  ACIaddr      0000002e
 EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
-CSEG start        0000002c
-CSEG ADC_COMP     000000df
+CSEG start        00000034
+CSEG timer_int    000000d5
 EQU  LCD_CTRL     00000005
 EQU  LCD_EN       00000000
 EQU  LCD_RS       00000001
@@ -719,23 +719,20 @@ EQU  LCD_MODE_INC_SHIFT 00000007
 EQU  LCD_MODE_DEC 00000004
 EQU  LCD_MODE_DEC_SHIF 00000005
 EQU  LCD_CLEAR    00000001
-CSEG init_lcd     00000094
-CSEG _write_lcd_data 000000bf
-CSEG _delay_us    000000ca
-CSEG conf_conv    00000046
-CSEG start_conv   00000051
-CSEG loop         00000055
-CSEG _write_lcd_cmd 000000b9
-CSEG show_h       00000067
-CSEG show_l       00000075
-CSEG show_pot     00000082
-CSEG end_conv     0000008a
-CSEG clean        0000008b
-CSEG fim          00000092
-CSEG delay_2ms    000000d1
-CSEG delay_1us    000000c5
-CSEG loop1_d1     000000c7
-CSEG loop1_d45    000000cb
-CSEG loop1_d2     000000d3
-CSEG mess1        000000d6
-CSEG mess2        000000da
+CSEG init_lcd     00000093
+CSEG _delay_us    000000c9
+CSEG _write_lcd_data 000000be
+CSEG fim          00000064
+CSEG _write_lcd_cmd 000000b8
+CSEG delay_2ms    000000d0
+CSEG delay_1us    000000c4
+CSEG loop1_d1     000000c6
+CSEG loop1_d45    000000ca
+CSEG loop1_d2     000000d2
+CSEG _incrsec     000000f2
+CSEG _incrdsec    000000ef
+CSEG _incrmin     000000ed
+CSEG _incrdmin    000000ea
+CSEG _timer_end   000000f3
+CSEG mess1        000000f4
+CSEG mess2        000000f8

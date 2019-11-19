@@ -1,8 +1,16 @@
 
-AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\LCD Teste\LCD Teste\main.asm Mon Nov 18 11:52:00 2019
+AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm Mon Nov 18 15:53:48 2019
 
-[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
-[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(22): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(40): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(41): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(23): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc'
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(22): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(40): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(41): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc'
+C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(23): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc'
                                  
                                  ;
                                  
@@ -985,67 +993,216 @@ AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\
                                  
                                  ; ***** END OF FILE ******************************************************
                                  
-                                 ; LCD_Test.asm
+                                 ; i2c_lcd_control.asm
                                  ;
-                                 ; Created: 9/11/2017 9:15:52 AM
+                                 ; Created: 10/30/2018 10:44:25 AM
                                  ; Author : jlfragoso
                                  ;
+                                 
+                                 .dseg
+000100                           adc_data: .byte 2
+000102                           adc_asc: .byte 10
+                                 ; Replace with your application code
                                  .cseg
                                  .org 0x0000
-                                 ;ISR Lists
-000000 940c 002c                 	jmp start					; 0x0000 Reset
-                                 ;	jmp	irq0 					; 0x0002 IRQ0
-                                 ;	jmp INT0_ 					; 0x0004 IRQ1
-                                 ;	jmp PCINT1_					; 0x0006 PCINT0
-                                 ;	jmp PCINT1_					; 0x0008 PCINT1
-                                 ;	jmp PCINT2 					; 0x000A PCINT2
-                                 ;	jmp WDT 					; 0x000C Estouro de Watchdog
-                                 ;	jmp TIM2_COMPA 				; 0x000E Timer2 Comparacao A
-                                 ;	jmp TIM2_COMPB 				; 0x0010 Timer2 Comparacao B
-                                 ;	jmp TIM2_OVF 				; 0x0012 Timer2 Estouro
-                                 ;	jmp TIM1_CAPT 				; 0x0014 Timer1 Captura
-                                 ;	jmp TIM1_COMPA 				; 0x0016 Timer1 Comparacao A
-                                 ;	jmp TIM1_COMPB 				; 0x0018 Timer1 Comparacao B
-                                 ;	jmp TIM1_OVF 				; 0x001A Timer1 Estouro
-                                 ;	jmp TIM0_COMPA 				; 0x001C Timer0 Comparacao A
-                                 ;	jmp TIM0_COMPB 				; 0x001E Timer0 Comparacao B
+                                 ;ISR List vector
+000000 940c 01d6                 jmp start  ; reset
+                                 .org 0x0024
+000024 940c 01ca                 jmp usart_receiver_isr
+                                 .org 0x002a
+00002a 940c 0236                 jmp adc_complete ; adc conversion end
                                  
-                                 ;	.org 0x0020
-                                 ;	jmp TIM0_OVF 				; 0x0020 Timer0 Estouro
-                                 ;	jmp SPI_STC 				; 0x0022 SPI Transferencia Completa
-                                 ;	jmp USART_RXC 				; 0x0024 USART RX Completa
-                                 ;	jmp USART_EMPTY				; 0x0026 Registro de Dados Vazio na USART
-                                 ;	jmp USART_TXC				; 0x0028 USART TX Completa
-                                 .org 0x002A
-00002a 940c 00df                 	jmp ADC_COMP                ; 0x002A ADC Conversion Complete
-                                 ;	jmp EE_READY				; 0x002C EEPROM Ready
-                                 ;	jmp ANALOG_COMP				; 0x002E Analog Comparator
-                                 ;   jmp TWI						; 0x0030 2-wire Serial Interrupt (I2C)
-                                 ;	jmp SPM_READY				; 0x0032 Store Program Memory Ready
+                                 .org INT_VECTORS_SIZE
+                                 .include "lcd_i2c.inc"
                                  
+                                  * lcd_i2c.inc
+                                  *
+                                  *  Created: 10/30/2018 11:34:34 AM
+                                  *   Author: jlfragoso
+                                  */ 
+                                  
+                                  #ifndef __LCD_I2C_INC__
+                                  #define __LCD_I2C_INC__
                                  
-                                 .equ LCD_CTRL = PORTB
-                                 .equ LCD_EN = PB0
-                                 .equ LCD_RS = PB1
-                                 .equ LCD_DATA = PORTD
-                                 .equ LCD_POWER_UP = 0x30
-                                 .equ LCD_8BIT_2LINES = 0x38 
-                                 .equ LCD_8BIT_1LINE  = 0x30  ; power_up
-                                 .equ LCD_4BIT_2LINES = 0x28 
-                                 .equ LCD_4BIT_1LINE  = 0x20 
-                                 .equ LCD_DON_COFF_BOFF = 0x0C  ;--display on, cursor off, blink off
-                                 .equ LCD_DON_COFF_BON = 0x0D  ;--display on, cursor off, blink on
-                                 .equ LCD_DON_CON_BOFF = 0x0E  ;--display on, cursor on, blink off
-                                 .equ LCD_DON_CON_BON = 0x0F  ;--display on, cursor on, blink on
-                                 .equ LCD_DOFF_COFF_BOFF = 0x08  ;--display off, cursor off, blink off
-                                 .equ LCD_DOFF_COFF_BON = 0x09  ;--display off, cursor off, blink on
-                                 .equ LCD_DOFF_CON_BOFF = 0x0A  ;--display off, cursor on, blink off
-                                 .equ LCD_DOFF_CON_BON = 0x0B  ;--display off, cursor on, blink on
-                                 .equ LCD_MODE_INC = 0x06
+                                 .equ LCD_ADDRESS		= (0x7c>>1)
+                                 .equ RGB_ADDRESS        = (0xc4>>1)
+                                 .equ LCD_POWER_UP		= 0x28
+                                 .equ LCD_8BIT_2LINES	= 0x38 
+                                 .equ LCD_8BIT_1LINE		= 0x30  ; power_up
+                                 .equ LCD_4BIT_2LINES	= 0x28 
+                                 .equ LCD_4BIT_1LINE		= 0x20 
+                                 .equ LCD_DON_COFF_BOFF	= 0x0C  ;--display on, cursor off, blink off
+                                 .equ LCD_DON_COFF_BON	= 0x0D  ;--display on, cursor off, blink on
+                                 .equ LCD_DON_CON_BOFF	= 0x0E  ;--display on, cursor on, blink off
+                                 .equ LCD_DON_CON_BON	= 0x0F  ;--display on, cursor on, blink on
+                                 .equ LCD_DOFF_COFF_BOFF	= 0x08  ;--display off, cursor off, blink off
+                                 .equ LCD_DOFF_COFF_BON	= 0x09  ;--display off, cursor off, blink on
+                                 .equ LCD_DOFF_CON_BOFF	= 0x0A  ;--display off, cursor on, blink off
+                                 .equ LCD_DOFF_CON_BON	= 0x0B  ;--display off, cursor on, blink on
+                                 .equ LCD_MODE_INC		= 0x06
                                  .equ LCD_MODE_INC_SHIFT = 0x07
-                                 .equ LCD_MODE_DEC = 0x04
-                                 .equ LCD_MODE_DEC_SHIF = 0x05
-                                 .equ LCD_CLEAR = 0x01
+                                 .equ LCD_MODE_DEC		= 0x04
+                                 .equ LCD_MODE_DEC_SHIF	= 0x05
+                                 .equ LCD_CMD_CLEAR		= 0x01
+                                 .equ LCD_RETURN_HOME	= 0x02
+                                 .equ LCD_CMD_SET_CURSOR = 0x80
+                                 .equ LCD_LINE_0         = 0x00
+                                 .equ LCD_LINE_1         = 0x40
+                                 .equ RGB_RED			= 0x04
+                                 .equ RGB_GREEN			= 0x03
+                                 .equ RGB_BLUE			= 0x02
+                                 
+                                 
+                                  .include "twi_master.inc"
+                                 
+                                  * twi_master.inc
+                                  *
+                                  *  Created: 10/30/2018 10:45:48 AM
+                                  *   Author: jlfragoso
+                                  */ 
+                                 
+                                  #ifndef __TWI_MASTER_H__
+                                  #define __TWI_MASTER_H__
+                                 
+                                  .macro _wait_twi
+                                 	lds r24, TWCR
+                                 	sbrs r24, TWINT
+                                 	rjmp pc-3
+                                 .endm
+                                 
+                                  .cseg
+                                 
+                                  TWI_ISR:
+000034 9518                      	reti
+                                 
+                                 twi_init:
+000035 9a44                      	sbi PORTC, PC4
+000036 9a45                      	sbi PORTC, PC5
+000037 e488                      	ldi r24, 72 
+000038 9380 00b8                 	sts TWBR, r24
+00003a e080                      	ldi r24, 0
+00003b 9380 00b9                 	sts TWSR, r24
+00003d e485                      	ldi r24, (1<< TWEN) | (1 << TWEA) | (1 << TWIE)
+00003e 9380 00bc                 	sts TWCR, r24
+000040 9508                      	ret
+                                 
+                                 twi_start:
+000041 e080                      	ldi r24, 0
+000042 9380 00bc                 	sts TWCR, r24
+000044 ea84                      	ldi r24, (1<<TWINT) | (1<<TWSTA) | (1<<TWEN)
+000045 9380 00bc                 	sts TWCR, r24
+000047 9180 00bc
+000049 ff87
+00004a cffc                      	_wait_twi
+00004b 9508                      	ret
+                                 
+                                 twi_stop:
+00004c e984                      	ldi r24, (1<<TWINT) | (1<<TWSTO) | (1<<TWEN)
+00004d 9380 00bc                 	sts TWCR, r24
+00004f 9508                      	ret
+                                 
+                                 twi_write_byte: ;; valor no R24
+000050 9380 00bb                 	sts TWDR, r24
+000052 e884                      	ldi r24, (1<<TWINT) | (1<<TWEN)
+000053 9380 00bc                 	sts TWCR, r24
+000055 9180 00bc
+000057 ff87
+000058 cffc                      	_wait_twi
+000059 9508                      	ret
+                                 
+                                 twi_read_nack:
+00005a e884                      	ldi r24, (1<<TWINT) | (1<<TWEN)
+00005b 9380 00bc                 	sts TWCR, r24
+00005d 9180 00bc
+00005f ff87
+000060 cffc                      	_wait_twi
+000061 9180 00bb                 	lds r24, TWDR
+000063 9508                      	ret
+                                 
+                                 twi_read_ack:
+000064 ec84                      	ldi r24, (1<<TWINT) | (1<<TWEN) | (1<<TWEA)
+000065 9380 00bc                 	sts TWCR, r24
+000067 9180 00bc
+000069 ff87
+00006a cffc                      	_wait_twi
+00006b 9180 00bb                 	lds r24, TWDR
+00006d 9508                      	ret
+                                 
+                                 twi_write_slave_reg: ;r24 slv add r25 reg add r26 data
+00006e 93af                      	push r26
+00006f 939f                      	push r25
+000070 938f                      	push r24
+000071 940e 0041                 	call twi_start
+000073 918f                      	pop r24
+000074 9488                      	clc  ;; add last bit as 0 to write
+000075 1f88                      	rol r24 ;;
+000076 940e 0050                 	call twi_write_byte  ;; write slave addr
+000078 918f                      	pop r24
+000079 940e 0050                 	call twi_write_byte ;; reg addr
+00007b 918f                      	pop r24
+00007c 940e 0050                 	call twi_write_byte ;; data
+00007e 940e 004c                 	call twi_stop
+000080 9508                      	ret
+                                 
+                                 twi_read_slave_reg: ;r24 slv add r25 reg return data r24
+000081 938f                      	push r24
+000082 939f                      	push r25
+000083 938f                      	push r24
+000084 940e 0041                 	call twi_start
+000086 918f                      	pop r24
+000087 9488                      	clc  ;; add last bit as 0 to write
+000088 1f88                      	rol r24 ;;
+000089 940e 0050                 	call twi_write_byte  ;; write slave addr
+00008b 918f                      	pop r24
+00008c 940e 0050                 	call twi_write_byte ;; reg addr
+00008e 940e 0041                 	call twi_start
+000090 918f                      	pop r24
+000091 9408                      	sec
+000092 1f88                      	rol r24
+000093 940e 0050                 	call twi_write_byte ;; write slave addr || 1
+000095 940e 005a                 	call twi_read_nack
+000097 938f                      	push r24
+000098 940e 004c                 	call twi_stop
+00009a 918f                      	pop r24
+00009b 9508                      	ret
+                                 
+                                 #endif
+                                  .include "misc.inc"
+                                 
+                                  * misc.inc
+                                  *
+                                  *  Created: 10/30/2018 11:41:34 AM
+                                  *   Author: jlfragoso
+                                  */ 
+                                 
+                                  #ifndef __MISC_INC__
+                                  #define __MISC_INC__
+                                 
+                                  .macro nibble_to_hex
+                                 	andi @0, 0x0f
+                                 	ori @0, 0x30
+                                 	cpi @0, 0x3a
+                                 	brmi pc+2
+                                 	add @0, @1
+                                 	nop
+                                 .endm
+                                 
+                                 .macro wait_button_press
+                                 	sbis @0, @1
+                                 	rjmp pc-1
+                                 .endm
+                                 
+                                 .macro wait_button_release
+                                 	sbic @0, @1
+                                 	rjmp pc-1
+                                 .endm
+                                 
+                                 .macro wait_button_press_and_release
+                                 	sbis @0, @1
+                                 	rjmp pc-1
+                                 	sbic @0, @1
+                                 	rjmp pc-1
+                                 .endm
                                  
                                  .macro delay_us
                                  	ldi r24, @0
@@ -1058,242 +1215,571 @@ AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\
                                  	rcall delay_2ms
                                  .endm
                                  
-                                 .macro write_lcd_cmd
-                                 	ldi r24, @0
-                                 	rcall _write_lcd_cmd
+                                 .cseg
+                                 delay_1us:
+00009c 0000                      	nop
+00009d e082                      	ldi r24, 2
+                                 loop1_d1:
+00009e 958a                      	dec r24
+00009f f7f1                      	brne loop1_d1
+0000a0 9508                      	ret
+                                 
+                                 _delay_us:  ; carregar em r24 valor em us
+0000a1 e093                      	ldi r25, 3
+                                 loop1_d45:
+0000a2 0000                      	nop
+0000a3 959a                      	dec r25
+0000a4 f7e9                      	brne loop1_d45
+0000a5 958a                      	dec r24
+0000a6 f7d1                      	brne _delay_us
+0000a7 9508                      	ret
+                                 
+                                 delay_2ms:
+0000a8 eb80                      	ldi r24, low(57520)
+0000a9 ee90                      	ldi r25, high(57520)
+                                 loop1_d2:
+0000aa 9601                      	adiw r24,1
+0000ab f7f1                      	brne loop1_d2
+0000ac 9508                      	ret
+                                 
+                                 buffer_flush:
+0000ad e00c                      	ldi r16, low(_START_BUFFER_ADDR)
+0000ae e011                      	ldi r17, high(_START_BUFFER_ADDR)
+0000af 9300 020c                 	sts _buffer_head, r16
+0000b1 9310 020d                 	sts (_buffer_head+1), r17
+0000b3 9300 020e                 	sts _buffer_tail, r16
+0000b5 9310 020f                 	sts (_buffer_tail+1), r17
+0000b7 e000                      	ldi r16, 0
+0000b8 9300 0210                 	sts _buffer_flag, r16
+0000ba 9508                      	ret
+                                 
+                                 buffer_write:  ; recebe r18 byte 
+0000bb ef0f                      	ldi r16, 0xff
+0000bc 9110 0210                 	lds r17, _buffer_flag
+0000be 1701                      	cp r16, r17
+0000bf f0a1                      	breq _buffer_write_ret
+0000c0 9513                      	inc r17
+0000c1 9310 0210                 	sts _buffer_flag, r17
+0000c3 91c0 020c                 	lds yl, _buffer_head
+0000c5 91d0 020d                 	lds yh, (_buffer_head+1)
+0000c7 9329                      	st y+, r18 ; salvou no buffer
+0000c8 e00c                      	ldi r16, low(_END_BUFFER_ADDR)
+0000c9 e012                      	ldi r17, high(_END_BUFFER_ADDR)
+0000ca 171d                      	cp r17, yh
+0000cb f421                      	brne _buffer_write_end
+0000cc 170c                      	cp r16, yl
+0000cd f411                      	brne _buffer_write_end
+0000ce e0cc                      	ldi yl, low(_START_BUFFER_ADDR)
+0000cf e0d1                      	ldi yh, high(_START_BUFFER_ADDR)
+                                 _buffer_write_end:
+0000d0 93c0 020c                 	sts _buffer_head, yl
+0000d2 93d0 020d                 	sts (_buffer_head+1), yh
+                                 _buffer_write_ret:
+0000d4 9508                      	ret
+                                 
+                                 buffer_read: ; retorna byte r18
+0000d5 9100 0210                 	lds r16, _buffer_flag
+0000d7 2300                      	tst r16
+0000d8 f0a1                      	breq _buffer_read_ret
+0000d9 950a                      	dec r16
+0000da 9300 0210                 	sts _buffer_flag, r16
+0000dc 91c0 020e                 	lds yl, (_buffer_tail)
+0000de 91d0 020f                 	lds yh, (_buffer_tail+1)
+0000e0 9129                      	ld r18, y+ ; le caracter
+0000e1 e00c                      	ldi r16, low(_END_BUFFER_ADDR)
+0000e2 e012                      	ldi r17, high(_END_BUFFER_ADDR)
+0000e3 171d                      	cp r17, yh
+0000e4 f421                      	brne _buffer_read_end
+0000e5 170c                      	cp r16, yl
+0000e6 f411                      	brne _buffer_read_end
+0000e7 e0cc                      	ldi yl, low(_START_BUFFER_ADDR)
+0000e8 e0d1                      	ldi yh, high(_START_BUFFER_ADDR)
+                                 _buffer_read_end:
+0000e9 93c0 020e                 	sts _buffer_tail, yl
+0000eb 93d0 020f                 	sts (_buffer_tail+1), yh
+                                 _buffer_read_ret:
+0000ed 9508                      	ret
+                                 
+                                 
+                                 int16_to_asc:
+0000ee e035                      	ldi r19, 5 ; 5 casas decimais
+                                 _start_conv:
+0000ef e02d                      	ldi r18, 13  ; 12 bits
+0000f0 e000                      	ldi r16, 0x00
+0000f1 ea10                      	ldi r17, 0xA0
+0000f2 e040                      	ldi r20, 0
+0000f3 e050                      	ldi r21, 0
+                                 _div10:
+0000f4 1780                      	cp r24, r16
+0000f5 0791                      	cpc r25, r17
+0000f6 f020                      	brlo _next_step
+0000f7 9408                      	sec
+0000f8 1d41                      	adc r20, r1
+0000f9 1b80                      	sub r24, r16
+0000fa 0b91                      	sbc r25, r17
+                                 _next_step:
+0000fb 9488                      	clc
+0000fc 9517                      	ror r17
+0000fd 9507                      	ror r16
+0000fe 9488                      	clc
+0000ff 1f44                      	rol r20
+000100 1f55                      	rol r21
+000101 952a                      	dec r18
+000102 f789                      	brne _div10
+000103 9488                      	clc
+000104 9557                      	ror r21
+000105 9547                      	ror r20
+000106 6380                      	ori r24, 0x30
+000107 938f                      	push r24
+000108 2f84                      	mov r24, r20
+000109 2f95                      	mov r25, r21
+00010a 953a                      	dec r19
+00010b f719                      	brne _start_conv
+00010c 910f                      	pop r16
+00010d 930d                      	st x+, r16
+00010e 910f                      	pop r16
+00010f 930d                      	st x+, r16
+000110 910f                      	pop r16
+000111 930d                      	st x+, r16
+000112 910f                      	pop r16
+000113 930d                      	st x+, r16
+000114 910f                      	pop r16
+000115 930d                      	st x+, r16
+000116 e000                      	ldi r16, 0
+000117 930d                      	st x+, r16
+000118 9508                      	ret
+                                 
+                                 .dseg
+                                 .equ BUFFER_SIZE = 256
+                                 _START_BUFFER_ADDR:
+00010c                           _rbuffer: .byte BUFFER_SIZE
+                                 _END_BUFFER_ADDR:
+00020c                           _buffer_head: .byte 2
+00020e                           _buffer_tail: .byte 2
+000210                           _buffer_flag: .byte 1
+000211                           _asc_buffer : .byte 10
+                                  #endif 
+                                 
+                                  .macro write_lcd_cmd
+                                 	ldi r26, @0
+                                 	ldi r24, LCD_ADDRESS
+                                 	ldi r25, 0x80
+                                 	rcall twi_write_slave_reg
+                                 	delay_us 50
+                                 .endm
+                                 
+                                 .macro write_lcd_cmd_reg
+                                 	mov r26, @0
+                                 	ldi r24, LCD_ADDRESS
+                                 	ldi r25, 0x80
+                                 	rcall twi_write_slave_reg
                                  	delay_us 50
                                  .endm
                                  
                                  .macro write_lcd_data
-                                 	ldi r24, @0
-                                 	rcall _write_lcd_data
+                                 	ldi r26, @0
+                                 	ldi r24, LCD_ADDRESS
+                                 	ldi r25, 0x40
+                                 	rcall twi_write_slave_reg
                                  	delay_us 50
                                  .endm
                                  
                                  .macro write_lcd_data_reg
-                                 	mov r24, @0
-                                 	rcall _write_lcd_data
+                                 	mov r26, @0
+                                 	ldi r24, LCD_ADDRESS
+                                 	ldi r25, 0x40
+                                 	rcall twi_write_slave_reg
                                  	delay_us 50
                                  .endm
                                  
-                                 ; Replace with your application code
+                                 .macro write_rgb_reg
+                                 	ldi r25, @0
+                                 	ldi r26, @1
+                                 	ldi r24, RGB_ADDRESS
+                                 	rcall twi_write_slave_reg
+                                 .endm
+                                 
+                                 .macro rgb_set_color
+                                 	write_rgb_reg RGB_RED, @0
+                                 	write_rgb_reg RGB_GREEN, @1
+                                 	write_rgb_reg RGB_BLUE, @2
+                                 .endm
+                                 
+                                 .macro lcd_set_cursor
+                                 	ldi r24, @0
+                                 	ldi r25, @1
+                                 	rcall _lcd_set_cursor
+                                 .endm
+                                 
+                                 .cseg
+                                 lcd_init:
+000119 e2a8
+00011a e38e
+00011b e890
+00011c df51
+00011d e382
+00011e df82                      	write_lcd_cmd LCD_POWER_UP
+00011f df88
+000120 df87
+000121 df86                      	delay_6ms
+000122 e2a8
+000123 e38e
+000124 e890
+000125 df48
+000126 e382
+000127 df79                      	write_lcd_cmd LCD_POWER_UP
+000128 e684
+000129 df77                      	delay_us 100
+00012a e2a8
+00012b e38e
+00012c e890
+00012d df40
+00012e e382
+00012f df71                      	write_lcd_cmd LCD_POWER_UP
+000130 e2a8
+000131 e38e
+000132 e890
+000133 df3a
+000134 e382
+000135 df6b                      	write_lcd_cmd LCD_POWER_UP
+000136 e3a8
+000137 e38e
+000138 e890
+000139 df34
+00013a e382
+00013b df65                      	write_lcd_cmd LCD_8BIT_2LINES
+00013c e0a8
+00013d e38e
+00013e e890
+00013f df2e
+000140 e382
+000141 df5f                      	write_lcd_cmd LCD_DOFF_COFF_BOFF
+000142 e0a1
+000143 e38e
+000144 e890
+000145 df28
+000146 e382
+000147 df59                      	write_lcd_cmd LCD_CMD_CLEAR
+000148 df5f                      	rcall delay_2ms
+000149 e0a6
+00014a e38e
+00014b e890
+00014c df21
+00014d e382
+00014e df52                      	write_lcd_cmd LCD_MODE_INC
+00014f e0ac
+000150 e38e
+000151 e890
+000152 df1b
+000153 e382
+000154 df4c                      	write_lcd_cmd LCD_DON_COFF_BOFF
+000155 d001                      	rcall rgb_init
+000156 9508                      	ret
+                                 
+                                 rgb_init:
+000157 e090
+000158 e0a0
+000159 e682
+00015a df13                      	write_rgb_reg 0x00,0x00
+00015b e098
+00015c efaf
+00015d e682
+00015e df0f                      	write_rgb_reg 0x08,0xff
+00015f e091
+000160 e2a0
+000161 e682
+000162 df0b                      	write_rgb_reg 0x01,0x20
+000163 e094
+000164 e0a0
+000165 e682
+000166 df07
+000167 e093
+000168 e0a0
+000169 e682
+00016a df03
+00016b e092
+00016c efaf
+00016d e682
+00016e deff                      	rgb_set_color 0x00,0x00,0xff
+00016f 9508                      	ret
+                                 
+                                 lcd_clear:
+000170 e0a1
+000171 e38e
+000172 e890
+000173 defa
+000174 e382
+000175 df2b                      	write_lcd_cmd LCD_CMD_CLEAR
+000176 df31                      	rcall delay_2ms
+000177 9508                      	ret
+                                 
+                                 _lcd_set_cursor:   ;r24 linha r25 coluna
+000178 e8a0                      	ldi  r26, LCD_CMD_SET_CURSOR
+000179 709f                      	andi r25, 0x0f
+00017a 7081                      	andi r24, 0x01
+00017b f009                      	breq _continue
+00017c 64a0                      	ori r26, LCD_LINE_1
+                                 _continue:
+00017d 2ba9                      	or r26, r25
+00017e 2faa
+00017f e38e
+000180 e890
+000181 deec
+000182 e382
+000183 df1d                      	write_lcd_cmd_reg r26
+000184 9508                      	ret
+                                 
+                                 lcd_write_str_flash: ; endereco da str em Z
+                                 	; alinhar o end (x2)
+000185 9488                      	clc
+000186 1fee                      	rol zl
+000187 1fff                      	rol zh
+                                 _l1_str_from_flash:
+000188 9185                      	lpm r24, z+ ;le char
+000189 2388                      	tst r24
+00018a f409                      	brne _p1_str ; se nao for nulo imprime
+00018b 9508                      	ret
+                                 _p1_str: ; imprime e volta
+00018c 2fa8
+00018d e38e
+00018e e490
+00018f dede
+000190 e382
+000191 df0f                      	write_lcd_data_reg r24
+000192 cff5                      	rjmp _l1_str_from_flash
+                                 
+                                 lcd_write_str_sram: ; endereco da str em Z
+                                 _l1_str_from_sram:
+000193 9181                      	ld r24, z+ ;le char
+000194 2388                      	tst r24
+000195 f409                      	brne _p2_str ; se nao for nulo imprime
+000196 9508                      	ret
+                                 _p2_str: ; imprime e volta
+000197 2fa8
+000198 e38e
+000199 e490
+00019a ded3
+00019b e382
+00019c df04                      	write_lcd_data_reg r24
+00019d cff5                      	rjmp _l1_str_from_sram
+                                 
+                                 lcd_write_reg_hex:
+00019e 938f                      	push r24 ; guarda valor original
+00019f 9582                      	swap r24
+0001a0 708f                      	andi r24, 0x0f
+0001a1 6380                      	ori  r24, 0x30
+0001a2 338a                      	cpi r24, 0x3a
+0001a3 f012                      	brmi _c1 ; continue
+0001a4 e097                      	ldi r25, 0x07
+0001a5 0f89                      	add r24, r25
+                                 _c1: 
+0001a6 2fa8
+0001a7 e38e
+0001a8 e490
+0001a9 dec4
+0001aa e382
+0001ab def5                      	write_lcd_data_reg r24
+0001ac 918f                      	pop r24
+0001ad 708f                      	andi r24, 0x0f
+0001ae 6380                      	ori  r24, 0x30
+0001af 338a                      	cpi r24, 0x3a
+0001b0 f012                      	brmi _c2 ; continue
+0001b1 e097                      	ldi r25, 0x07
+0001b2 0f89                      	add r24, r25
+                                 _c2: 
+0001b3 2fa8
+0001b4 e38e
+0001b5 e490
+0001b6 deb7
+0001b7 e382
+0001b8 dee8                      	write_lcd_data_reg r24
+0001b9 9508                      	ret
+                                 
+                                  #endif
+                                 
+                                 .include "usart.inc"
+                                 
+                                  * usart.inc
+                                  *
+                                  *  Created: 11/13/2018 11:07:15 AM
+                                  *   Author: jlfragoso
+                                  */ 
+                                 
+                                  #ifndef __USART_INC__
+                                  #define __USART_INC__
+                                 
+                                 
+                                  usart_init:
+0001ba e100                      	ldi r16, 16
+0001bb e010                      	ldi r17, 0
+0001bc 9310 00c5                 	sts UBRR0H, r17
+0001be 9300 00c4                 	sts UBRR0L, r16
+0001c0 e908                      	ldi r16, (1<<RXCIE0) | (1<<RXEN0) | (1<<TXEN0) 
+0001c1 9300 00c1                 	sts UCSR0B, r16
+0001c3 e00e                      	ldi r16, (1<<USBS0) | (3<<UCSZ00)
+0001c4 9300 00c2                 	sts UCSR0C, r16
+0001c6 e002                      	ldi r16, (1<<U2X0)
+0001c7 9300 00c0                 	sts UCSR0A, r16
+0001c9 9508                      	ret
+                                 
+                                 usart_receiver_isr:
+0001ca 9120 00c6                 	lds r18, UDR0
+0001cc 2e72                      	mov r7, r18
+0001cd deed                      	rcall buffer_write
+0001ce 9518                      	reti
+                                 
+                                 usart_transmit:
+0001cf 9110 00c0                 	lds r17, UCSR0A
+0001d1 ff15                      	sbrs r17, UDRE0
+0001d2 cffc                      	rjmp usart_transmit
+0001d3 9300 00c6                 	sts UDR0, r16
+0001d5 9508                      	ret
+                                  #endif
+                                 
+                                 
+                                 
                                  start:
-00002c ef8f                      	ldi r24,0xff
-00002d b98a                      	out ddrd, r24
-00002e e083                      	ldi r24, 0x03
-00002f b984                      	out ddrb, r24
-000030 d063                      	rcall init_lcd
-000031 e688
-000032 d08c
-000033 e382
-000034 d095                      	write_lcd_data 'h';
-000035 e685
-000036 d088
-000037 e382
-000038 d091                      	write_lcd_data 'e';
-000039 e68c
-00003a d084
-00003b e382
-00003c d08d                      	write_lcd_data 'l';
-00003d e68c
-00003e d080
-00003f e382
-000040 d089                      	write_lcd_data 'l';
-000041 e68f
-000042 d07c
-000043 e382
-000044 d085                      	write_lcd_data 'o';
-                                 	;write_lcd_cmd 0xC0
-000045 d084                      	rcall _delay_us
-                                 conf_conv:
-000046 e600                      	ldi r16, (1 << REFS0) | (1 << ADLAR) | (0 << MUX0) ; 0 - 7 escolhe entrada
-000047 9300 007c                 	sts ADMUX, r16
-000049 e001                      	ldi r16, 1
-00004a 9300 007e                 	sts DIDR0, r16 ; desabilita entrada digital 0 da porta C
-00004c e90f                      	ldi r16, (1 << ADEN) | (1 << ADIF) | (1 << ADIE) | (7 << ADPS0)
-00004d 9300 007a                 	sts ADCSRA, r16
-                                 	
-00004f e020                      	ldi r18, 0x00 ; valor atual mostrado no display
-000050 e030                      	ldi r19, 0x00 
-                                 start_conv:
-000051 ed0f                      	ldi r16, (1 << ADEN) | (1 << ADSC) | (1 << ADIF) | (1 << ADIE) | (7 << ADPS0)
-000052 9300 007a                 	sts ADCSRA, r16
-000054 9478                      	sei
-                                 loop:
-000055 1723                      	cp r18, r19
-000056 f3f1                      	breq loop
-000057 2f23                      	mov r18, r19
-000058 e888
-000059 d05f
-00005a e382
-00005b d06e                      	write_lcd_cmd 0x88
+0001d6 e008                      	ldi r16, high(RAMEND) 
+0001d7 bf0e                      	out sph, r16
+0001d8 ef0f                      	ldi r16, low(RAMEND)
+0001d9 bf0d                      	out spl, r16
+0001da 2411                      	eor r1,r1
+0001db e389                      	ldi r24, low(12345)
+0001dc e390                      	ldi r25, high(12345)
+0001dd df10                      	rcall int16_to_asc
                                  
-00005c 2f02                      	mov r16, r18
-00005d 9500                      	com r16
-00005e 9502                      	swap r16
-00005f e01f                      	ldi r17, 0x0f
-000060 2301                      	and r16, r17
-000061 6300                      	ori r16, 0x30
-000062 e31a                      	ldi r17, 0x3a
-000063 1701                      	cp r16, r17
-000064 f010                      	brlo show_h
-000065 e017                      	ldi r17, 7
-000066 0f01                      	add r16, r17
-                                 show_h:
-000067 2f80
-000068 d056
-000069 e382
-00006a d05f                      	write_lcd_data_reg r16
                                  
-00006b 2f02                      	mov r16, r18
-00006c 9500                      	com r16
-00006d e01f                      	ldi r17, 0x0f
-00006e 2301                      	and r16, r17
-00006f 6300                      	ori r16, 0x30
-000070 e31a                      	ldi r17, 0x3a
-000071 1701                      	cp r16, r17
-000072 f010                      	brlo show_l
-000073 e017                      	ldi r17, 7
-000074 0f01                      	add r16, r17
-                                 show_l:
-000075 2f80
-000076 d048
-000077 e382
-000078 d051                      	write_lcd_data_reg r16
+0001de dece                      	rcall buffer_flush
+0001df dfda                      	rcall usart_init
+0001e0 de54                      	rcall twi_init
+0001e1 df37                      	rcall lcd_init
+0001e2 2455                      	eor r5, r5
+0001e3 2477                      	eor r7, r7
                                  
-000079 ec80
-00007a d03e
-00007b e382
-00007c d04d                      	write_lcd_cmd 0xC0
-00007d 2f02                      	mov r16, r18
-00007e 9500                      	com r16
-00007f 9502                      	swap r16
-000080 e01f                      	ldi r17, 0x0f
-000081 2301                      	and r16, r17
-                                 show_pot:
-000082 f039                      	breq end_conv
-000083 ef8f
-000084 d03a
-000085 e382
-000086 d043                      	write_lcd_data 255
-000087 951a                      	dec r17
-000088 950a                      	dec r16
-000089 cff8                      	rjmp show_pot
-                                 end_conv:
-00008a 2311                      	tst r17
-                                 clean:
-00008b f229                      	breq start_conv
-00008c e280
-00008d d031
-00008e e382
-00008f d03a                      	write_lcd_data ' '
-000090 951a                      	dec r17
-000091 cff9                      	rjmp clean
+0001e4 e4e1                      	ldi zl, low(_msg1)
+0001e5 e0f2                      	ldi zh, high(_msg1)
+0001e6 df9e                      	rcall lcd_write_str_flash
+                                 _go_again: 
+0001e7 e081
+0001e8 e090
+0001e9 df8e                      	lcd_set_cursor 1,0
+0001ea e4e8                      	ldi zl, low(_msg2)
+0001eb e0f2                      	ldi zh, high(_msg2)
+0001ec df98                      	rcall lcd_write_str_flash 
+                                 
+0001ed 9b4c
+0001ee cffe
+0001ef 994c
+0001f0 cffe                      	wait_button_press_and_release PIND, PD4
+                                 	;; configurar o timer 1 
+0001f1 e385                      	ldi r24, low(3125)
+0001f2 e09c                      	ldi r25, high(3125)
+0001f3 9390 0089                 	sts OCR1AH, r25
+0001f5 9380 0088                 	sts OCR1AL, r24
+0001f7 9390 008b                 	sts OCR1BH, r25
+0001f9 9380 008a                 	sts OCR1BL, r24
+0001fb e080                      	ldi r24, 0x00
+0001fc 9380 0085                 	sts TCNT1H, r24
+0001fe 9380 0084                 	sts TCNT1L, r24
+000200 9380 006f                 	sts TIMSK1, r24 ; SEM INTERRUPCAO DO TIMER
+000202 9380 0080                 	sts TCCR1A, r24
+000204 e08d                      	ldi r24, (1<<WGM12) | (5 << CS10) ; modo 4 e prescaler 1024
+000205 9380 0081                 	sts TCCR1B, r24
+                                 
+                                 
+000207 e081                      	ldi r24, (1<<ADC0D) ; desabilita digital
+000208 9380 007e                 	sts DIDR0, r24
+00020a e480                      	ldi r24, (1<<REFS0) ; usar avcc e ADC0
+00020b 9380 007c                 	sts ADMUX, r24
+00020d e085                      	ldi r24, (5 << ADTS0)
+00020e 9380 007b                 	sts ADCSRB, r24 ; free running
+000210 ef8f                      	ldi r24, (1<<ADEN) | (1<<ADSC)| (1<<ADATE) | (1<<ADIE) |(1<<ADIF) | (7<<ADPS0)
+000211 9380 007a                 	sts ADCSRA, r24 ;; comeca conversao
+000213 9478                      	sei
+                                 
+                                 ;espera_conv:
+                                 ;	lds r24, ADCSRA
+                                 ;	andi r24, (1<<ADIF)
+                                 ;	breq espera_conv
+000214 df5b                      	rcall lcd_clear
+000215 e4ef                      	ldi zl, low(_msg3)
+000216 e0f2                      	ldi zh, high(_msg3)
+000217 df6d                      	rcall lcd_write_str_flash 
+                                 
+                                 	; conversao acabou
+                                 
+                                 _loop_update:
+                                 	;; print ADC
+                                 	;lds r24,(adc_data+1)
+                                 	;rcall lcd_write_reg_hex
+                                 	;lds r24, adc_data
+                                 	;rcall lcd_write_reg_hex
+                                 	;write_lcd_data ' '
+                                 	;write_lcd_data_reg r7
+                                 
+000218 9180 0100                 	lds r24, (adc_data)
+00021a 9190 0101                 	lds r25, (adc_data+1)
+00021c e0a2                      	ldi xl, low(adc_asc)
+00021d e0b1                      	ldi xh, high(adc_asc)
+00021e decf                      	rcall int16_to_asc
+00021f e0e2                      	ldi zl, low(adc_asc)
+000220 e0f1                      	ldi zh, high(adc_asc) 
+000221 df71                      	rcall lcd_write_str_sram
+                                 	;;imprime buffer
+                                 _print_buffer:
+000222 9180 0210                 	lds r24, (_buffer_flag)
+000224 2388                      	tst r24
+000225 f061                      	breq _loop_continue
+000226 e081                      	ldi r24, 1
+000227 2d95                      	mov r25, r5
+000228 df4f                      	rcall _lcd_set_cursor
+000229 deab                      	rcall buffer_read
+00022a 2fa2
+00022b e38e
+00022c e490
+00022d de40
+00022e e382
+00022f de71                      	write_lcd_data_reg r18
+000230 9453                      	inc r5
+000231 cff0                      	rjmp _print_buffer
+                                 
+                                 _loop_continue:
+000232 e080
+000233 e096
+000234 df43                      	lcd_set_cursor 0,6
                                  
                                  fim:
-000092 9503                          inc r16
-000093 cffe                          rjmp fim
+000235 cfe2                      	rjmp _loop_update
+                                 
+                                 adc_complete:
+000236 9100 0078                 	lds r16, ADCL
+000238 9110 0079                 	lds r17, ADCH
+00023a 9300 0100                 	sts adc_data, r16
+00023c 9310 0101                 	sts (adc_data+1), r17
+00023e ef0f                      	ldi r16, 0xff
+00023f bb06                      	out TIFR1, r16 ; clear timer/counter 1 flags
+000240 9518                      	reti
                                  
                                  
-                                 init_lcd:
-000094 e380
-000095 d023
-000096 e382
-000097 d032                      	write_lcd_cmd LCD_POWER_UP
-000098 d038
-000099 d037
-00009a d036                      	delay_6ms
-00009b e380
-00009c d01c
-00009d e382
-00009e d02b                      	write_lcd_cmd LCD_POWER_UP
-00009f e380
-0000a0 d018
-0000a1 e382
-0000a2 d027                      	write_lcd_cmd LCD_POWER_UP
-0000a3 e388
-0000a4 d014
-0000a5 e382
-0000a6 d023                      	write_lcd_cmd LCD_8BIT_2LINES
-0000a7 e088
-0000a8 d010
-0000a9 e382
-0000aa d01f                      	write_lcd_cmd LCD_DOFF_COFF_BOFF
-0000ab e081
-0000ac d00c
-0000ad e382
-0000ae d01b                      	write_lcd_cmd LCD_CLEAR
-0000af d021                      	rcall delay_2ms
-0000b0 e086
-0000b1 d007
-0000b2 e382
-0000b3 d016                      	write_lcd_cmd LCD_MODE_INC
-0000b4 e08f
-0000b5 d003
-0000b6 e382
-0000b7 d012                      	write_lcd_cmd LCD_DON_CON_BON
-0000b8 9508                      	ret
-                                 
-                                 
-                                 _write_lcd_cmd:   ; cmd on R24
-0000b9 b98b                      	out LCD_DATA, R24 
-0000ba 9829                          cbi LCD_CTRL, LCD_RS  ; RS = 0
-0000bb 9a28                      	sbi LCD_CTRL, LCD_EN  ; EN = 1
-0000bc d008                      	rcall delay_1us
-0000bd 9828                      	cbi LCD_CTRL, LCD_EN ; EN = 0
-0000be 9508                      	ret
-                                 
-                                 _write_lcd_data:   ; cmd on R24
-0000bf b98b                      	out LCD_DATA, R24 
-0000c0 9a29                          sbi LCD_CTRL, LCD_RS  ; RS = 1
-0000c1 9a28                      	sbi LCD_CTRL, LCD_EN  ; EN = 1
-0000c2 d002                      	rcall delay_1us
-0000c3 9828                      	cbi LCD_CTRL, LCD_EN ; EN = 0
-0000c4 9508                      	ret
-                                 
-                                 delay_1us:
-0000c5 0000                      	nop
-0000c6 e082                      	ldi r24, 2
-                                 loop1_d1:
-0000c7 958a                      	dec r24
-0000c8 f7f1                      	brne loop1_d1
-0000c9 9508                      	ret
-                                 
-                                 _delay_us:  ; carregar em r24 valor em us
-0000ca e093                      	ldi r25, 3
-                                 loop1_d45:
-0000cb 0000                      	nop
-0000cc 959a                      	dec r25
-0000cd f7e9                      	brne loop1_d45
-0000ce 958a                      	dec r24
-0000cf f7d1                      	brne _delay_us
-0000d0 9508                      	ret
-                                 
-                                 delay_2ms:
-0000d1 eb80                      	ldi r24, low(57520)
-0000d2 ee90                      	ldi r25, high(57520)
-                                 loop1_d2:
-0000d3 9601                      	adiw r24,1
-0000d4 f7f1                      	brne loop1_d2
-0000d5 9508                      	ret
-                                 
-                                 mess1:
-0000d6 6548
-0000d7 6c6c
-0000d8 216f
-0000d9 0020                      .db "Hello! ",0x00
-                                 mess2:
-0000da 6555
-0000db 6772
-0000dc 2e73
-0000dd 2e2e
-0000de 0000                      .db "Uergs...", 0x00,0x00
-                                 
-                                 ADC_COMP:
-0000df 9130 0079                 	lds r19, ADCH
-0000e1 ed0f                      	ldi r16, (1 << ADEN) | (1 << ADSC) | (1 << ADIF) | (1 << ADIE) | (7 << ADPS0)
-0000e2 9300 007a                 	sts ADCSRA, r16
-0000e4 9518                      	reti
+                                 _constants:
+000241 6548
+000242 6c6c
+000243 206f
+000244 6555
+000245 6772
+000246 2173
+000247 0000                      _msg1: .db "Hello Uergs!",0,0
+000248 7250
+000249 7365
+00024a 2073
+00024b 7562
+00024c 7474
+00024d 6e6f
+00024e 0000                      _msg2: .db "Press button",0,0
+00024f 4441
+000250 2043
+000251 203d
+000252 0000                      _msg3: .db "ADC = ",0,0
 
 
 RESOURCE USE INFORMATION
@@ -1311,40 +1797,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
-r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  31 r17:  17 r18:   6 r19:   4 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:  49 r25:   3 r26:   0 r27:   0 r28:   0 
-r29:   0 r30:   0 r31:   0 
-Registers used: 6 out of 35 (17.1%)
+x  :   6 y  :   2 z  :   2 r0 :   0 r1 :   3 r2 :   0 r3 :   0 r4 :   0 
+r5 :   4 r6 :   0 r7 :   3 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
+r13:   0 r14:   0 r15:   0 r16:  48 r17:  21 r18:   7 r19:   2 r20:   5 
+r21:   4 r22:   0 r23:   0 r24: 137 r25:  44 r26:  28 r27:   1 r28:   8 
+r29:   8 r30:   5 r31:   5 
+Registers used: 20 out of 35 (57.1%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   2 adiw  :   1 and   :   3 
-andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   2 brlt  :   0 brmi  :   0 
-brne  :   4 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   3 cbr   :   0 
-clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   3 cp    :   3 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   6 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   1 jmp   :   2 
-ld    :   0 ldd   :   0 ldi   :  56 lds   :   1 lpm   :   0 lsl   :   0 
-lsr   :   0 mov   :   6 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   2 or    :   0 ori   :   2 out   :   4 pop   :   0 
-push  :   0 rcall :  46 ret   :   6 reti  :   1 rjmp  :   3 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   3 sbic  :   0 sbis  :   0 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
+.lds  :   0 .sts  :   0 adc   :   1 add   :   2 adiw  :   1 and   :   0 
+andi  :   4 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   2 
+brne  :  12 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  12 cbi   :   0 cbr   :   0 
+clc   :   6 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   6 cpc   :   1 
+cpi   :   2 cpse  :   0 dec   :   6 eor   :   3 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   2 jmp   :   3 
+ld    :   2 ldd   :   0 ldi   : 145 lds   :  19 lpm   :   1 lsl   :   0 
+lsr   :   0 mov   :  10 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   2 or    :   1 ori   :   4 out   :   3 pop   :  13 
+push  :   9 rcall :  61 ret   :  24 reti  :   3 rjmp  :  11 rol   :   7 
+ror   :   4 sbc   :   1 sbci  :   0 sbi   :   2 sbic  :   1 sbis  :   1 
+sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   5 sec   :   2 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   5 
-sub   :   0 subi  :   0 swap  :   2 tst   :   1 wdr   :   0 
-Instructions used: 27 out of 113 (23.9%)
+sez   :   0 sleep :   0 spm   :   0 st    :   7 std   :   0 sts   :  42 
+sub   :   1 subi  :   0 swap  :   1 tst   :   4 wdr   :   0 
+Instructions used: 46 out of 113 (40.7%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0001ca    360     18    378   32768   1.2%
-[.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
+[.cseg] 0x000000 0x0004a6   1062     36   1098   32768   3.4%
+[.dseg] 0x000100 0x00021b      0    283    283    2048  13.8%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings
