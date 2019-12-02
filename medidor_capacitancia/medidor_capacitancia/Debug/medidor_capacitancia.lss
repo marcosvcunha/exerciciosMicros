@@ -1,16 +1,14 @@
 
-AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm Mon Nov 25 12:54:11 2019
+AVRASM ver. 2.2.7  c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm Mon Nov 25 18:07:41 2019
 
-[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(22): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(40): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(41): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(23): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc'
-[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\Atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(22): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(40): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\twi_master.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\lcd_i2c.inc(41): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\misc.inc'
-C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm(23): Including file 'C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\usart.inc'
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm(20): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc(40): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc(41): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc'
+[builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm(20): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc(40): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc'
+c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc(41): Including file 'c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc'
                                  
                                  ;
                                  
@@ -993,24 +991,22 @@ C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c
                                  
                                  ; ***** END OF FILE ******************************************************
                                  
-                                 ; i2c_lcd_control.asm
+                                 ; medidor_capacitancia.asm
                                  ;
-                                 ; Created: 10/30/2018 10:44:25 AM
-                                 ; Author : jlfragoso
+                                 ; Created: 25/11/2019 15:14:12
+                                 ; Author : CLIENTE
                                  ;
-                                 
                                  .dseg
-000100                           adc_data: .byte 2
-000102                           adc_asc: .byte 10
+000100                           value: .byte 10
                                  ; Replace with your application code
                                  .cseg
                                  .org 0x0000
                                  ;ISR List vector
-000000 940c 01d6                 jmp start  ; reset
-                                 .org 0x0024
-000024 940c 01ca                 jmp usart_receiver_isr
-                                 .org 0x002a
-00002a 940c 0236                 jmp adc_complete ; adc conversion end
+000000 940c 01ba                 jmp start  ; reset
+                                 .org 0x0014
+000014 940c 0292                 jmp ISR_capture
+                                 .org 0x001a
+00001a 940c 0292                 jmp ISR_capture
                                  
                                  .org INT_VECTORS_SIZE
                                  .include "lcd_i2c.inc"
@@ -1243,60 +1239,60 @@ C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c
 0000ac 9508                      	ret
                                  
                                  buffer_flush:
-0000ad e00c                      	ldi r16, low(_START_BUFFER_ADDR)
+0000ad e00a                      	ldi r16, low(_START_BUFFER_ADDR)
 0000ae e011                      	ldi r17, high(_START_BUFFER_ADDR)
-0000af 9300 020c                 	sts _buffer_head, r16
-0000b1 9310 020d                 	sts (_buffer_head+1), r17
-0000b3 9300 020e                 	sts _buffer_tail, r16
-0000b5 9310 020f                 	sts (_buffer_tail+1), r17
+0000af 9300 020a                 	sts _buffer_head, r16
+0000b1 9310 020b                 	sts (_buffer_head+1), r17
+0000b3 9300 020c                 	sts _buffer_tail, r16
+0000b5 9310 020d                 	sts (_buffer_tail+1), r17
 0000b7 e000                      	ldi r16, 0
-0000b8 9300 0210                 	sts _buffer_flag, r16
+0000b8 9300 020e                 	sts _buffer_flag, r16
 0000ba 9508                      	ret
                                  
                                  buffer_write:  ; recebe r18 byte 
 0000bb ef0f                      	ldi r16, 0xff
-0000bc 9110 0210                 	lds r17, _buffer_flag
+0000bc 9110 020e                 	lds r17, _buffer_flag
 0000be 1701                      	cp r16, r17
 0000bf f0a1                      	breq _buffer_write_ret
 0000c0 9513                      	inc r17
-0000c1 9310 0210                 	sts _buffer_flag, r17
-0000c3 91c0 020c                 	lds yl, _buffer_head
-0000c5 91d0 020d                 	lds yh, (_buffer_head+1)
+0000c1 9310 020e                 	sts _buffer_flag, r17
+0000c3 91c0 020a                 	lds yl, _buffer_head
+0000c5 91d0 020b                 	lds yh, (_buffer_head+1)
 0000c7 9329                      	st y+, r18 ; salvou no buffer
-0000c8 e00c                      	ldi r16, low(_END_BUFFER_ADDR)
+0000c8 e00a                      	ldi r16, low(_END_BUFFER_ADDR)
 0000c9 e012                      	ldi r17, high(_END_BUFFER_ADDR)
 0000ca 171d                      	cp r17, yh
 0000cb f421                      	brne _buffer_write_end
 0000cc 170c                      	cp r16, yl
 0000cd f411                      	brne _buffer_write_end
-0000ce e0cc                      	ldi yl, low(_START_BUFFER_ADDR)
+0000ce e0ca                      	ldi yl, low(_START_BUFFER_ADDR)
 0000cf e0d1                      	ldi yh, high(_START_BUFFER_ADDR)
                                  _buffer_write_end:
-0000d0 93c0 020c                 	sts _buffer_head, yl
-0000d2 93d0 020d                 	sts (_buffer_head+1), yh
+0000d0 93c0 020a                 	sts _buffer_head, yl
+0000d2 93d0 020b                 	sts (_buffer_head+1), yh
                                  _buffer_write_ret:
 0000d4 9508                      	ret
                                  
                                  buffer_read: ; retorna byte r18
-0000d5 9100 0210                 	lds r16, _buffer_flag
+0000d5 9100 020e                 	lds r16, _buffer_flag
 0000d7 2300                      	tst r16
 0000d8 f0a1                      	breq _buffer_read_ret
 0000d9 950a                      	dec r16
-0000da 9300 0210                 	sts _buffer_flag, r16
-0000dc 91c0 020e                 	lds yl, (_buffer_tail)
-0000de 91d0 020f                 	lds yh, (_buffer_tail+1)
+0000da 9300 020e                 	sts _buffer_flag, r16
+0000dc 91c0 020c                 	lds yl, (_buffer_tail)
+0000de 91d0 020d                 	lds yh, (_buffer_tail+1)
 0000e0 9129                      	ld r18, y+ ; le caracter
-0000e1 e00c                      	ldi r16, low(_END_BUFFER_ADDR)
+0000e1 e00a                      	ldi r16, low(_END_BUFFER_ADDR)
 0000e2 e012                      	ldi r17, high(_END_BUFFER_ADDR)
 0000e3 171d                      	cp r17, yh
 0000e4 f421                      	brne _buffer_read_end
 0000e5 170c                      	cp r16, yl
 0000e6 f411                      	brne _buffer_read_end
-0000e7 e0cc                      	ldi yl, low(_START_BUFFER_ADDR)
+0000e7 e0ca                      	ldi yl, low(_START_BUFFER_ADDR)
 0000e8 e0d1                      	ldi yh, high(_START_BUFFER_ADDR)
                                  _buffer_read_end:
-0000e9 93c0 020e                 	sts _buffer_tail, yl
-0000eb 93d0 020f                 	sts (_buffer_tail+1), yh
+0000e9 93c0 020c                 	sts _buffer_tail, yl
+0000eb 93d0 020d                 	sts (_buffer_tail+1), yh
                                  _buffer_read_ret:
 0000ed 9508                      	ret
                                  
@@ -1352,12 +1348,12 @@ C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c
                                  .dseg
                                  .equ BUFFER_SIZE = 256
                                  _START_BUFFER_ADDR:
-00010c                           _rbuffer: .byte BUFFER_SIZE
+00010a                           _rbuffer: .byte BUFFER_SIZE
                                  _END_BUFFER_ADDR:
-00020c                           _buffer_head: .byte 2
-00020e                           _buffer_tail: .byte 2
-000210                           _buffer_flag: .byte 1
-000211                           _asc_buffer : .byte 10
+00020a                           _buffer_head: .byte 2
+00020c                           _buffer_tail: .byte 2
+00020e                           _buffer_flag: .byte 1
+00020f                           _asc_buffer : .byte 10
                                   #endif 
                                  
                                   .macro write_lcd_cmd
@@ -1597,189 +1593,263 @@ C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c
                                  
                                   #endif
                                  
-                                 .include "usart.inc"
-                                 
-                                  * usart.inc
-                                  *
-                                  *  Created: 11/13/2018 11:07:15 AM
-                                  *   Author: jlfragoso
-                                  */ 
-                                 
-                                  #ifndef __USART_INC__
-                                  #define __USART_INC__
                                  
                                  
-                                  usart_init:
-0001ba e100                      	ldi r16, 16
-0001bb e010                      	ldi r17, 0
-0001bc 9310 00c5                 	sts UBRR0H, r17
-0001be 9300 00c4                 	sts UBRR0L, r16
-0001c0 e908                      	ldi r16, (1<<RXCIE0) | (1<<RXEN0) | (1<<TXEN0) 
-0001c1 9300 00c1                 	sts UCSR0B, r16
-0001c3 e00e                      	ldi r16, (1<<USBS0) | (3<<UCSZ00)
-0001c4 9300 00c2                 	sts UCSR0C, r16
-0001c6 e002                      	ldi r16, (1<<U2X0)
-0001c7 9300 00c0                 	sts UCSR0A, r16
-0001c9 9508                      	ret
-                                 
-                                 usart_receiver_isr:
-0001ca 9120 00c6                 	lds r18, UDR0
-0001cc 2e72                      	mov r7, r18
-0001cd deed                      	rcall buffer_write
-0001ce 9518                      	reti
-                                 
-                                 usart_transmit:
-0001cf 9110 00c0                 	lds r17, UCSR0A
-0001d1 ff15                      	sbrs r17, UDRE0
-0001d2 cffc                      	rjmp usart_transmit
-0001d3 9300 00c6                 	sts UDR0, r16
-0001d5 9508                      	ret
-                                  #endif
-                                 
-                                 
-                                 
+                                 ; Replace with your application code
                                  start:
-0001d6 e008                      	ldi r16, high(RAMEND) 
-0001d7 bf0e                      	out sph, r16
-0001d8 ef0f                      	ldi r16, low(RAMEND)
-0001d9 bf0d                      	out spl, r16
-0001da 2411                      	eor r1,r1
-0001db e389                      	ldi r24, low(12345)
-0001dc e390                      	ldi r25, high(12345)
-0001dd df10                      	rcall int16_to_asc
+0001ba e008                      	ldi r16, high(RAMEND) 
+0001bb bf0e                      	out sph, r16
+0001bc ef0f                      	ldi r16, low(RAMEND)
+0001bd bf0d                      	out spl, r16
+0001be 2411                      	eor r1, r1
+                                 	
+0001bf de75                      	rcall twi_init
+0001c0 df58                      	rcall lcd_init
+                                 	
+0001c1 e004                      	ldi r16, (1<<2)
+0001c2 b90a                      	out DDRD, r16
+0001c3 e000                      	ldi r16, 0
+0001c4 b90b                      	out PORTD, r16
+0001c5 e003                      	ldi r16, (1<<0)|(1<<1)
+0001c6 b904                      	out DDRB, r16
+0001c7 e002                      	ldi r16, 2
+0001c8 b905                      	out PORTB, r16
+                                 
+0001c9 e9e8                      	ldi zl, low(_msg1)
+0001ca e0f2                      	ldi zh, high(_msg1)
+0001cb dfb9                      	rcall lcd_write_str_flash
+0001cc e081
+0001cd e090
+0001ce dfa9                      	lcd_set_cursor 1,0
+0001cf e9ee                      	ldi zl, low(_msg2)
+0001d0 e0f2                      	ldi zh, high(_msg2)
+0001d1 dfb3                      	rcall lcd_write_str_flash 
+0001d2 9b4b
+0001d3 cffe
+0001d4 994b
+0001d5 cffe                      	wait_button_press_and_release PIND, PD3
+0001d6 df99                      	rcall lcd_clear
+0001d7 e2ae
+0001d8 e38e
+0001d9 e490
+0001da de93
+0001db e382
+0001dc dec4                      	write_lcd_data '.'
+0001dd e407                      	ldi r16, (1<<ACBG)|(1<<ACIC)|(3<<ACIS0)
+0001de bf00                      	out ACSR, r16
+0001df e002                      	ldi r16, (1<<AIN1D)
+0001e0 9300 007f                 	sts DIDR1, r16
                                  
                                  
-0001de dece                      	rcall buffer_flush
-0001df dfda                      	rcall usart_init
-0001e0 de54                      	rcall twi_init
-0001e1 df37                      	rcall lcd_init
-0001e2 2455                      	eor r5, r5
-0001e3 2477                      	eor r7, r7
+0001e2 e201                      	ldi r16, (1<<ICIE1)|(1<<TOIE1)
+0001e3 9300 006f                 	sts TIMSK1, r16
+                                 loop_medida:
+0001e5 2411                      	eor r1,r1
+0001e6 2477                      	eor r7,r7
+0001e7 2488                      	eor r8, r8
+0001e8 2499                      	eor r9, r9
+0001e9 9478                      	sei
+0001ea 9210 0085                 	sts TCNT1H, r1
+0001ec 9210 0084                 	sts TCNT1L, r1
+0001ee ef0f                      	ldi r16, 0xff
+0001ef bb06                      	out TIFR1, r16
+0001f0 e803                      	ldi r16, (1<<ICNC1) | (3<<CS10)
+0001f1 9300 0081                 	sts TCCR1B, r16
                                  
-0001e4 e4e1                      	ldi zl, low(_msg1)
-0001e5 e0f2                      	ldi zh, high(_msg1)
-0001e6 df9e                      	rcall lcd_write_str_flash
-                                 _go_again: 
-0001e7 e081
-0001e8 e090
-0001e9 df8e                      	lcd_set_cursor 1,0
-0001ea e4e8                      	ldi zl, low(_msg2)
-0001eb e0f2                      	ldi zh, high(_msg2)
-0001ec df98                      	rcall lcd_write_str_flash 
+0001f3 9a5a                      	sbi PORTD, PD2
+0001f4 e002                      	ldi r16, 2
+0001f5 b905                      	out PORTB, r16
+                                 espera:
+0001f6 2077                      	tst r7
+0001f7 f3f1                      	breq espera
+                                 conv:
+0001f8 94f8                      	cli
+0001f9 985a                      	cbi PORTD, PD2
+0001fa e000                      	ldi r16, 0
+0001fb 9300 0081                 	sts TCCR1B, r16 ; stop counter
                                  
-0001ed 9b4c
-0001ee cffe
-0001ef 994c
-0001f0 cffe                      	wait_button_press_and_release PIND, PD4
-                                 	;; configurar o timer 1 
-0001f1 e385                      	ldi r24, low(3125)
-0001f2 e09c                      	ldi r25, high(3125)
-0001f3 9390 0089                 	sts OCR1AH, r25
-0001f5 9380 0088                 	sts OCR1AL, r24
-0001f7 9390 008b                 	sts OCR1BH, r25
-0001f9 9380 008a                 	sts OCR1BL, r24
-0001fb e080                      	ldi r24, 0x00
-0001fc 9380 0085                 	sts TCNT1H, r24
-0001fe 9380 0084                 	sts TCNT1L, r24
-000200 9380 006f                 	sts TIMSK1, r24 ; SEM INTERRUPCAO DO TIMER
-000202 9380 0080                 	sts TCCR1A, r24
-000204 e08d                      	ldi r24, (1<<WGM12) | (5 << CS10) ; modo 4 e prescaler 1024
-000205 9380 0081                 	sts TCCR1B, r24
+0001fd df72                      	rcall lcd_clear
+0001fe e080
+0001ff e090
+000200 df77                      	lcd_set_cursor 0,0
+000201 2d88                      		mov r24, r8
+000202 2d99                      	mov r25, r9
+000203 e0a0                      	ldi xl, low(value)
+000204 e0b1                      	ldi xh, high(value)
+000205 dee8                      	rcall int16_to_asc
                                  
+000206 e0e0                      	ldi zl, low(value)
+000207 e0f1                      	ldi zh, high(value) 
+000208 df8a                      	rcall lcd_write_str_sram
                                  
-000207 e081                      	ldi r24, (1<<ADC0D) ; desabilita digital
-000208 9380 007e                 	sts DIDR0, r24
-00020a e480                      	ldi r24, (1<<REFS0) ; usar avcc e ADC0
-00020b 9380 007c                 	sts ADMUX, r24
-00020d e085                      	ldi r24, (5 << ADTS0)
-00020e 9380 007b                 	sts ADCSRB, r24 ; free running
-000210 ef8f                      	ldi r24, (1<<ADEN) | (1<<ADSC)| (1<<ADATE) | (1<<ADIE) |(1<<ADIF) | (7<<ADPS0)
-000211 9380 007a                 	sts ADCSRA, r24 ;; comeca conversao
-000213 9478                      	sei
+000209 e081
+00020a e090
+00020b df6c                      	lcd_set_cursor 1,0
+00020c eae5                      	ldi zl, low(_msg3)
+00020d e0f2                      	ldi zh, high(_msg3)
+00020e df76                      	rcall lcd_write_str_flash 
+00020f 985a                      	cbi PORTD, 2
                                  
-                                 ;espera_conv:
-                                 ;	lds r24, ADCSRA
-                                 ;	andi r24, (1<<ADIF)
-                                 ;	breq espera_conv
-000214 df5b                      	rcall lcd_clear
-000215 e4ef                      	ldi zl, low(_msg3)
-000216 e0f2                      	ldi zh, high(_msg3)
-000217 df6d                      	rcall lcd_write_str_flash 
+000210 2d08                      	mov r16, r8
+000211 2d19                      	mov r17, r9
+000212 24aa                      	eor r10, r10
+000213 e027                      	ldi r18, 7
+000214 9f02                      	mul r16, r18
+000215 2c80                      	mov r8, r0
+000216 2c91                      	mov r9, r1
+000217 9f12                      	mul r17, r18
+000218 0c90                      	add r9, r0
+000219 1ca1                      	adc r10, r1
                                  
-                                 	; conversao acabou
+00021a 9488                      	clc
+00021b 94a7                      	ror r10
+00021c 9497                      	ror r9
+00021d 9487                      	ror r8
+00021e 9488                      	clc
+00021f 94a7                      	ror r10
+000220 9497                      	ror r9
+000221 9487                      	ror r8
+000222 9488                      	clc
+000223 2d88                      	mov r24, r8
+000224 2d99                      	mov r25, r9
+000225 e0a0                      	ldi xl, low(value)
+000226 e0b1                      	ldi xh, high(value)
+000227 dec6                      	rcall int16_to_asc
                                  
-                                 _loop_update:
-                                 	;; print ADC
-                                 	;lds r24,(adc_data+1)
-                                 	;rcall lcd_write_reg_hex
-                                 	;lds r24, adc_data
-                                 	;rcall lcd_write_reg_hex
-                                 	;write_lcd_data ' '
-                                 	;write_lcd_data_reg r7
-                                 
-000218 9180 0100                 	lds r24, (adc_data)
-00021a 9190 0101                 	lds r25, (adc_data+1)
-00021c e0a2                      	ldi xl, low(adc_asc)
-00021d e0b1                      	ldi xh, high(adc_asc)
-00021e decf                      	rcall int16_to_asc
-00021f e0e2                      	ldi zl, low(adc_asc)
-000220 e0f1                      	ldi zh, high(adc_asc) 
-000221 df71                      	rcall lcd_write_str_sram
-                                 	;;imprime buffer
-                                 _print_buffer:
-000222 9180 0210                 	lds r24, (_buffer_flag)
-000224 2388                      	tst r24
-000225 f061                      	breq _loop_continue
-000226 e081                      	ldi r24, 1
-000227 2d95                      	mov r25, r5
-000228 df4f                      	rcall _lcd_set_cursor
-000229 deab                      	rcall buffer_read
-00022a 2fa2
-00022b e38e
-00022c e490
-00022d de40
-00022e e382
-00022f de71                      	write_lcd_data_reg r18
-000230 9453                      	inc r5
-000231 cff0                      	rjmp _print_buffer
-                                 
-                                 _loop_continue:
-000232 e080
-000233 e096
-000234 df43                      	lcd_set_cursor 0,6
-                                 
+000228 e0e0                      	ldi zl, low(value)
+000229 e0f1                      	ldi zh, high(value) 
+00022a df68                      	rcall lcd_write_str_sram
                                  fim:
-000235 cfe2                      	rjmp _loop_update
+00022b e6ae
+00022c e38e
+00022d e490
+00022e de3f
+00022f e382
+000230 de70                      	write_lcd_data 'n'
+000231 e4a6
+000232 e38e
+000233 e490
+000234 de39
+000235 e382
+000236 de6a                      	write_lcd_data 'F'
                                  
-                                 adc_complete:
-000236 9100 0078                 	lds r16, ADCL
-000238 9110 0079                 	lds r17, ADCH
-00023a 9300 0100                 	sts adc_data, r16
-00023c 9310 0101                 	sts (adc_data+1), r17
-00023e ef0f                      	ldi r16, 0xff
-00023f bb06                      	out TIFR1, r16 ; clear timer/counter 1 flags
-000240 9518                      	reti
+000237 de70
+000238 de6f
+000239 de6e                      	delay_6ms
+00023a de6d
+00023b de6c
+00023c de6b                      	delay_6ms
+00023d de6a
+00023e de69
+00023f de68                      	delay_6ms
+000240 de67
+000241 de66
+000242 de65                      	delay_6ms
+000243 de64
+000244 de63
+000245 de62                      	delay_6ms
+000246 de61
+000247 de60
+000248 de5f                      	delay_6ms
+000249 de5e
+00024a de5d
+00024b de5c                      	delay_6ms
+00024c de5b
+00024d de5a
+00024e de59                      	delay_6ms
+00024f de58
+000250 de57
+000251 de56                      	delay_6ms
+000252 de55
+000253 de54
+000254 de53                      	delay_6ms
+000255 de52
+000256 de51
+000257 de50                      	delay_6ms
+000258 de4f
+000259 de4e
+00025a de4d                      	delay_6ms
+00025b de4c
+00025c de4b
+00025d de4a                      	delay_6ms
+00025e de49
+00025f de48
+000260 de47                      	delay_6ms
+000261 de46
+000262 de45
+000263 de44                      	delay_6ms
+000264 de43
+000265 de42
+000266 de41                      	delay_6ms
+000267 de40
+000268 de3f
+000269 de3e                      	delay_6ms
+00026a de3d
+00026b de3c
+00026c de3b                      	delay_6ms
+00026d de3a
+00026e de39
+00026f de38                      	delay_6ms
+000270 de37
+000271 de36
+000272 de35                      	delay_6ms
+000273 de34
+000274 de33
+000275 de32                      	delay_6ms
+000276 de31
+000277 de30
+000278 de2f                      	delay_6ms
+000279 de2e
+00027a de2d
+00027b de2c                      	delay_6ms
+00027c de2b
+00027d de2a
+00027e de29                      	delay_6ms
+00027f de28
+000280 de27
+000281 de26                      	delay_6ms
+000282 de25
+000283 de24
+000284 de23                      	delay_6ms
+000285 de22
+000286 de21
+000287 de20                      	delay_6ms
+000288 de1f
+000289 de1e
+00028a de1d                      	delay_6ms
+00028b de1c
+00028c de1b
+00028d de1a                      	delay_6ms
+00028e de19
+00028f de18
+000290 de17                      	delay_6ms
+000291 cf53                      	rjmp loop_medida
                                  
+                                 ISR_capture:
+000292 9080 0086                 	lds r8, ICR1L
+000294 9090 0087                 	lds r9, ICR1H
+000296 9473                      	inc r7
+000297 9518                      	reti
                                  
                                  _constants:
-000241 6548
-000242 6c6c
-000243 206f
-000244 6555
-000245 6772
-000246 2173
-000247 0000                      _msg1: .db "Hello Uergs!",0,0
-000248 7250
-000249 7365
-00024a 2073
-00024b 7562
-00024c 7474
-00024d 6e6f
-00024e 0000                      _msg2: .db "Press button",0,0
-00024f 4441
-000250 2043
-000251 203d
-000252 0000                      _msg3: .db "ADC = ",0,0
+000298 6143
+000299 7870
+00029a 654d
+00029b 6574
+00029c 2172
+00029d 0000                      _msg1: .db "CapxMeter!",0,0
+00029e 7250
+00029f 7365
+0002a0 2073
+0002a1 7562
+0002a2 7474
+0002a3 6e6f
+0002a4 0000                      _msg2: .db "Press button",0,0
+0002a5 654d
+0002a6 6964
+0002a7 6f64
+0002a8 203d
+0002a9 0000                      _msg3: .db "Medido= ",0,0
 
 
 RESOURCE USE INFORMATION
@@ -1797,40 +1867,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328P" register use summary:
-x  :   6 y  :   2 z  :   2 r0 :   0 r1 :   3 r2 :   0 r3 :   0 r4 :   0 
-r5 :   4 r6 :   0 r7 :   3 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  48 r17:  21 r18:   7 r19:   2 r20:   5 
-r21:   4 r22:   0 r23:   0 r24: 137 r25:  44 r26:  28 r27:   1 r28:   8 
-r29:   8 r30:   5 r31:   5 
-Registers used: 20 out of 35 (57.1%)
+x  :   6 y  :   2 z  :   2 r0 :   2 r1 :   9 r2 :   0 r3 :   0 r4 :   0 
+r5 :   0 r6 :   0 r7 :   4 r8 :   9 r9 :  10 r10:   5 r11:   0 r12:   0 
+r13:   0 r14:   0 r15:   0 r16:  59 r17:  17 r18:   7 r19:   2 r20:   5 
+r21:   4 r22:   0 r23:   0 r24: 121 r25:  43 r26:  31 r27:   2 r28:   8 
+r29:   8 r30:   6 r31:   6 
+Registers used: 23 out of 35 (65.7%)
 
 "ATmega328P" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   1 add   :   2 adiw  :   1 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   2 add   :   3 adiw  :   1 and   :   0 
 andi  :   4 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   2 
 brne  :  12 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  12 cbi   :   0 cbr   :   0 
-clc   :   6 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  12 cbi   :   2 cbr   :   0 
+clc   :   9 clh   :   0 cli   :   1 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   6 cpc   :   1 
-cpi   :   2 cpse  :   0 dec   :   6 eor   :   3 fmul  :   0 fmuls :   0 
+cpi   :   2 cpse  :   0 dec   :   6 eor   :   6 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   2 jmp   :   3 
-ld    :   2 ldd   :   0 ldi   : 145 lds   :  19 lpm   :   1 lsl   :   0 
-lsr   :   0 mov   :  10 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   2 or    :   1 ori   :   4 out   :   3 pop   :  13 
-push  :   9 rcall :  61 ret   :  24 reti  :   3 rjmp  :  11 rol   :   7 
-ror   :   4 sbc   :   1 sbci  :   0 sbi   :   2 sbic  :   1 sbis  :   1 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   5 sec   :   2 seh   :   0 
+ld    :   2 ldd   :   0 ldi   : 155 lds   :  14 lpm   :   1 lsl   :   0 
+lsr   :   0 mov   :  15 movw  :   0 mul   :   2 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   2 or    :   1 ori   :   4 out   :   9 pop   :  13 
+push  :   9 rcall : 153 ret   :  22 reti  :   2 rjmp  :   9 rol   :   7 
+ror   :  10 sbc   :   1 sbci  :   0 sbi   :   3 sbic  :   1 sbis  :   1 
+sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   4 sec   :   2 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   7 std   :   0 sts   :  42 
+sez   :   0 sleep :   0 spm   :   0 st    :   7 std   :   0 sts   :  27 
 sub   :   1 subi  :   0 swap  :   1 tst   :   4 wdr   :   0 
-Instructions used: 46 out of 113 (40.7%)
+Instructions used: 49 out of 113 (43.4%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0004a6   1062     36   1098   32768   3.4%
-[.dseg] 0x000100 0x00021b      0    283    283    2048  13.8%
+[.cseg] 0x000000 0x000554   1236     36   1272   32768   3.9%
+[.dseg] 0x000100 0x000219      0    281    281    2048  13.7%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.7  C:\Users\CLIENTE\Documents\Atmel Studio\7.0\exerciciosMicros\i2c_lcd_control\i2c_lcd_control\main.asm Mon Nov 25 12:54:11 2019
+AVRASM ver. 2.2.7  c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm Mon Nov 25 18:07:41 2019
 
 
 EQU  SIGNATURE_000 0000001e
@@ -695,11 +695,9 @@ EQU  ACIaddr      0000002e
 EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
-DSEG adc_data     00000100
-DSEG adc_asc      00000102
-CSEG start        000001d6
-CSEG usart_receiver_isr 000001ca
-CSEG adc_complete 00000236
+DSEG value        00000100
+CSEG start        000001ba
+CSEG ISR_capture  00000292
 EQU  LCD_ADDRESS  0000003e
 EQU  RGB_ADDRESS  00000062
 EQU  LCD_POWER_UP 00000028
@@ -743,13 +741,13 @@ CSEG loop1_d45    000000a2
 CSEG delay_2ms    000000a8
 CSEG loop1_d2     000000aa
 CSEG buffer_flush 000000ad
-DSEG _START_BUFFER_ADDR 0000010c
-DSEG _buffer_head 0000020c
-DSEG _buffer_tail 0000020e
-DSEG _buffer_flag 00000210
+DSEG _START_BUFFER_ADDR 0000010a
+DSEG _buffer_head 0000020a
+DSEG _buffer_tail 0000020c
+DSEG _buffer_flag 0000020e
 CSEG buffer_write 000000bb
 CSEG _buffer_write_ret 000000d4
-DSEG _END_BUFFER_ADDR 0000020c
+DSEG _END_BUFFER_ADDR 0000020a
 CSEG _buffer_write_end 000000d0
 CSEG buffer_read  000000d5
 CSEG _buffer_read_ret 000000ed
@@ -759,8 +757,8 @@ CSEG _start_conv  000000ef
 CSEG _div10       000000f4
 CSEG _next_step   000000fb
 EQU  BUFFER_SIZE  00000100
-DSEG _rbuffer     0000010c
-DSEG _asc_buffer  00000211
+DSEG _rbuffer     0000010a
+DSEG _asc_buffer  0000020f
 CSEG lcd_init     00000119
 CSEG rgb_init     00000157
 CSEG lcd_clear    00000170
@@ -775,14 +773,11 @@ CSEG _p2_str      00000197
 CSEG lcd_write_reg_hex 0000019e
 CSEG _c1          000001a6
 CSEG _c2          000001b3
-CSEG usart_init   000001ba
-CSEG usart_transmit 000001cf
-CSEG _msg1        00000241
-CSEG _go_again    000001e7
-CSEG _msg2        00000248
-CSEG _msg3        0000024f
-CSEG _loop_update 00000218
-CSEG _print_buffer 00000222
-CSEG _loop_continue 00000232
-CSEG fim          00000235
-CSEG _constants   00000241
+CSEG _msg1        00000298
+CSEG _msg2        0000029e
+CSEG loop_medida  000001e5
+CSEG espera       000001f6
+CSEG conv         000001f8
+CSEG _msg3        000002a5
+CSEG fim          0000022b
+CSEG _constants   00000298

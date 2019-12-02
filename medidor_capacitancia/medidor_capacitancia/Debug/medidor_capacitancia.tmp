@@ -1,0 +1,87 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+  <FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE>
+  <FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE>
+  <FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\Debug\medidor_capacitancia.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>medidor_capacitancia.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>medidor_capacitancia.map</FILE>
+  <FILE>medidor_capacitancia.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <value><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>8</LINE></value>
+  <start><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>24</LINE></start>
+  <ISR_capture><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>169</LINE></ISR_capture>
+  <TWI_ISR><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>19</LINE></TWI_ISR>
+  <twi_init><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>22</LINE></twi_init>
+  <twi_start><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>33</LINE></twi_start>
+  <twi_stop><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>41</LINE></twi_stop>
+  <twi_write_byte><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>46</LINE></twi_write_byte>
+  <twi_read_nack><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>53</LINE></twi_read_nack>
+  <twi_read_ack><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>60</LINE></twi_read_ack>
+  <twi_write_slave_reg><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>67</LINE></twi_write_slave_reg>
+  <twi_read_slave_reg><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\twi_master.inc</FILE><LINE>83</LINE></twi_read_slave_reg>
+  <delay_1us><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>49</LINE></delay_1us>
+  <loop1_d1><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>52</LINE></loop1_d1>
+  <_delay_us><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>57</LINE></_delay_us>
+  <loop1_d45><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>59</LINE></loop1_d45>
+  <delay_2ms><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>67</LINE></delay_2ms>
+  <loop1_d2><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>70</LINE></loop1_d2>
+  <buffer_flush><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>75</LINE></buffer_flush>
+  <_START_BUFFER_ADDR><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>184</LINE></_START_BUFFER_ADDR>
+  <_buffer_head><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>187</LINE></_buffer_head>
+  <_buffer_tail><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>188</LINE></_buffer_tail>
+  <_buffer_flag><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>189</LINE></_buffer_flag>
+  <buffer_write><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>86</LINE></buffer_write>
+  <_buffer_write_ret><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>107</LINE></_buffer_write_ret>
+  <_END_BUFFER_ADDR><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>186</LINE></_END_BUFFER_ADDR>
+  <_buffer_write_end><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>104</LINE></_buffer_write_end>
+  <buffer_read><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>110</LINE></buffer_read>
+  <_buffer_read_ret><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>130</LINE></_buffer_read_ret>
+  <_buffer_read_end><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>127</LINE></_buffer_read_end>
+  <int16_to_asc><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>134</LINE></int16_to_asc>
+  <_start_conv><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>136</LINE></_start_conv>
+  <_div10><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>142</LINE></_div10>
+  <_next_step><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>150</LINE></_next_step>
+  <_rbuffer><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>185</LINE></_rbuffer>
+  <_asc_buffer><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\misc.inc</FILE><LINE>190</LINE></_asc_buffer>
+  <lcd_init><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>95</LINE></lcd_init>
+  <rgb_init><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>111</LINE></rgb_init>
+  <lcd_clear><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>118</LINE></lcd_clear>
+  <_lcd_set_cursor><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>123</LINE></_lcd_set_cursor>
+  <_continue><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>129</LINE></_continue>
+  <lcd_write_str_flash><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>134</LINE></lcd_write_str_flash>
+  <_l1_str_from_flash><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>139</LINE></_l1_str_from_flash>
+  <_p1_str><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>144</LINE></_p1_str>
+  <lcd_write_str_sram><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>148</LINE></lcd_write_str_sram>
+  <_l1_str_from_sram><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>149</LINE></_l1_str_from_sram>
+  <_p2_str><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>154</LINE></_p2_str>
+  <lcd_write_reg_hex><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>158</LINE></lcd_write_reg_hex>
+  <_c1><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>167</LINE></_c1>
+  <_c2><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\lcd_i2c.inc</FILE><LINE>176</LINE></_c2>
+  <_msg1><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>176</LINE></_msg1>
+  <_msg2><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>177</LINE></_msg2>
+  <loop_medida><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>61</LINE></loop_medida>
+  <espera><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>77</LINE></espera>
+  <conv><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>80</LINE></conv>
+  <_msg3><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>178</LINE></_msg3>
+  <fim><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>133</LINE></fim>
+  <_constants><FILE>c:\users\cliente\Documents\Atmel Studio\7.0\medidor_capacitancia\medidor_capacitancia\main.asm</FILE><LINE>175</LINE></_constants>
+ </LABELS>
+</ASSEMBLER_INFO>
